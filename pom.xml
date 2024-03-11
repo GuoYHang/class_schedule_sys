@@ -8,14 +8,17 @@
         <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.keydousguo</groupId>
     <artifactId>class_schedule_sys</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>class_schedule_sys</name>
     <description>class_schedule_sys</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -24,14 +27,24 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.10.2</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 
