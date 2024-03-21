@@ -10,6 +10,7 @@ import java.util.Set;
 
 /**
  * 登录用户身份权限
+ * 集成UserDetails
  */
 public class LoginUser implements UserDetails {
     private static final long serialVersionUID = 1L;
@@ -141,7 +142,6 @@ public class LoginUser implements UserDetails {
 
     /**
      * 指示是否已过期的用户的凭据(密码),过期的凭据防止认证
-     *
      * @return
      */
     @JSONField(serialize = false)
