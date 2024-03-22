@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * spring redis 工具类
+ * redis
  **/
 @SuppressWarnings(value = {"unchecked", "rawtypes"})
 @Component
@@ -21,7 +21,6 @@ public class RedisCache {
 
     /**
      * 缓存基本的对象，Integer、String、实体类等
-     *
      * @param key   缓存的键值
      * @param value 缓存的值
      */
@@ -31,7 +30,6 @@ public class RedisCache {
 
     /**
      * 缓存基本的对象，Integer、String、实体类等
-     *
      * @param key      缓存的键值
      * @param value    缓存的值
      * @param timeout  时间
@@ -43,7 +41,6 @@ public class RedisCache {
 
     /**
      * 设置有效时间
-     *
      * @param key     Redis键
      * @param timeout 超时时间
      * @return true=设置成功；false=设置失败
