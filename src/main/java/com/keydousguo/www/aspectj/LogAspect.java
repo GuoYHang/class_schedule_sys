@@ -6,7 +6,7 @@ import com.keydousguo.www.domain.entity.sys.SysUser;
 import com.keydousguo.www.enums.BusinessStatus;
 import com.keydousguo.www.enums.HttpMethod;
 import com.keydousguo.www.domain.model.LoginUser;
-//import com.keydousguo.www.filter.PropertyPreExcludeFilter;
+import com.keydousguo.www.filter.PropertyPreExcludeFilter;
 import com.keydousguo.www.utils.SecurityUtils;
 import com.keydousguo.www.utils.ServletUtils;
 import com.keydousguo.www.utils.ip.IpUtils;
@@ -162,7 +162,7 @@ public class LogAspect {
             String params = argsArrayToString(joinPoint.getArgs(), excludeParamNames);
             operLog.setOperParam(StringUtils.substring(params, 0, 2000));
         } else {
-//            operLog.setOperParam(StringUtils.substring(JSON.toJSONString(paramsMap, excludePropertyPreFilter(excludeParamNames)), 0, 2000));
+            operLog.setOperParam(StringUtils.substring(JSON.toJSONString(paramsMap, excludePropertyPreFilter(excludeParamNames)), 0, 2000));
         }
     }
 
@@ -175,8 +175,8 @@ public class LogAspect {
             for (Object o : paramsArray) {
                 if (StringUtils.isNotNull(o) && !isFilterObject(o)) {
                     try {
-//                        String jsonObj = JSON.toJSONString(o, excludePropertyPreFilter(excludeParamNames));
-//                        params += jsonObj.toString() + " ";
+                        String jsonObj = JSON.toJSONString(o, excludePropertyPreFilter(excludeParamNames));
+                        params += jsonObj.toString() + " ";
                     } catch (Exception e) {
                     }
                 }
@@ -188,9 +188,9 @@ public class LogAspect {
     /**
      * 忽略敏感属性
      */
-//    public PropertyPreExcludeFilter excludePropertyPreFilter(String[] excludeParamNames) {
-//        return new PropertyPreExcludeFilter().addExcludes(ArrayUtils.addAll(EXCLUDE_PROPERTIES, excludeParamNames));
-//    }
+    public PropertyPreExcludeFilter excludePropertyPreFilter(String[] excludeParamNames) {
+        return new PropertyPreExcludeFilter().addExcludes(ArrayUtils.addAll(EXCLUDE_PROPERTIES, excludeParamNames));
+    }
 
     /**
      * 判断是否需要过滤的对象。
