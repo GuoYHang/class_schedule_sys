@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@ConfigurationProperties(prefix = "keydousguo")
+@ConfigurationProperties(prefix = "sys")
 public class GlobalConfig {
     /** 项目名称 */
     private String name;
