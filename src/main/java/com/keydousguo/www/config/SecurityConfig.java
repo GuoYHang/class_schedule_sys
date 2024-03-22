@@ -89,7 +89,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception
     {
-        System.out.println("Class:SecurityConfig Method:configure");
 //        // 注解标记允许匿名访问的url
 //        ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity.authorizeRequests();
 //        permitAllUrl.getUrls().forEach(url -> registry.antMatchers(url).permitAll());
@@ -132,7 +131,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder()
     {
-        System.out.println("Class:SecurityConfig Method:bCryptPasswordEncoder");
         return new BCryptPasswordEncoder();
     }
 
@@ -142,7 +140,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception
     {
-        System.out.println("Class:SecurityConfig Method:configure(auth)");
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
     }
 }
