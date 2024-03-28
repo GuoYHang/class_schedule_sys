@@ -60,7 +60,6 @@ public class LogAspect {
 
     /**
      * 处理完请求后执行
-     *
      * @param joinPoint 切点
      */
     @AfterReturning(pointcut = "@annotation(controllerLog)", returning = "jsonResult")
@@ -70,7 +69,6 @@ public class LogAspect {
 
     /**
      * 拦截异常操作
-     *
      * @param joinPoint 切点
      * @param e         异常
      */
@@ -83,7 +81,6 @@ public class LogAspect {
         try {
             // 获取当前的用户
             LoginUser loginUser = SecurityUtils.getLoginUser();
-
             // *========数据库日志=========*//
             SysOperLog operLog = new SysOperLog();
             operLog.setStatus(BusinessStatus.SUCCESS.ordinal());
@@ -126,7 +123,6 @@ public class LogAspect {
 
     /**
      * 获取注解中对方法的描述信息 用于Controller层注解
-     *
      * @param log     日志
      * @param operLog 操作日志
      * @throws Exception
@@ -194,7 +190,6 @@ public class LogAspect {
 
     /**
      * 判断是否需要过滤的对象。
-     *
      * @param o 对象信息。
      * @return 如果是需要过滤的对象，则返回true；否则返回false。
      */
